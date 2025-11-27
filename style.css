@@ -29,10 +29,14 @@ body::before {
     display: flex;
     gap: 28px;
     z-index: 1;
+    max-width: 100%;
+    flex-wrap: wrap;   /* 🚀 Hace que en móvil caiga debajo */
+    justify-content: center;
 }
 
 .aero-card {
     width: var(--card-width);
+    max-width: 95%; /* 🚀 Se adapta en móvil */
     padding: 22px;
     border-radius: 18px;
     background: var(--glass);
@@ -99,7 +103,6 @@ button {
 
 .result-box p { margin:4px 0; }
 
-/* ========= BOTÓN DE ELIMINAR MINI ICONO ========= */
 .btn-delete {
     position:absolute;
     right:8px;
@@ -149,4 +152,26 @@ button {
     visibility:visible;
     opacity:1;
     bottom:50px;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px){
+    body {
+        padding: 10px;
+        align-items: center;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    input, select, button {
+        height: 40px;
+        font-size: 16px;
+    }
 }
