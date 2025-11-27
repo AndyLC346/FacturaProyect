@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Factura IGV Web</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ====================== CARD 1 – FORMULARIO ====================== -->
+    <div class="aero-card form-card">
+        <h2>Factura Web – Cálculos IGV</h2>
+
+        <label for="ruc">RUC del cliente:</label>
+        <input type="number" id="ruc" inputmode="numeric" />
+
+        <label for="tienePlaca">¿Tiene placa?</label>
+        <select id="tienePlaca" onchange="togglePlaca()">
+            <option value="N">No</option>
+            <option value="S">Sí</option>
+        </select>
+
+        <div id="placaDiv" style="display:none;">
+            <label for="placa">Placa del vehículo:</label>
+            <input type="text" id="placa" />
+        </div>
+
+        <hr class="divider">
+
+        <label for="nombre">Nombre del producto:</label>
+        <input type="text" id="nombre" />
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" min="1" />
+
+        <label for="importe">Importe total:</label>
+        <input type="number" id="importe" min="0.01" step="0.01" />
+
+        <button id="btnCalcular" onclick="calcular()">Calcular</button>
+    </div>
+
+    <!-- ====================== CARD 2 – RESULTADOS ====================== -->
+    <div class="aero-card resultados-card">
+        <h2>Resultados</h2>
+
+        <p id="infoCliente" class="info-cliente">No hay cliente registrado</p>
+
+        <div id="resultados" class="resultados-list"></div>
+
+        <h3 id="totalGeneral" class="total-general">TOTAL ACUMULADO: 0.00</h3>
+    </div>
+
+</div>
+
+<!-- SNACKBAR -->
+<div id="snackbar">Complete los campos vacíos</div>
+
+<script src="app.js"></script>
+</body>
+</html>

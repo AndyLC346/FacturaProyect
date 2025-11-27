@@ -1,0 +1,152 @@
+:root{
+    --card-width: 420px;
+    --accent: #47b7ff;
+    --accent-dark: #004b7a;
+    --glass: rgba(255,255,255,0.92);
+}
+
+*{box-sizing:border-box}
+body {
+    margin: 0;
+    padding: 24px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #000 url("assets/img/fondo1.jpg") center/cover fixed;
+    color: #052233;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+body::before {
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.25);
+    z-index:0;
+}
+
+.container {
+    display: flex;
+    gap: 28px;
+    z-index: 1;
+}
+
+.aero-card {
+    width: var(--card-width);
+    padding: 22px;
+    border-radius: 18px;
+    background: var(--glass);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 28px rgba(3,37,58,0.28);
+}
+
+h2 {
+    text-align: center;
+    margin: 0 0 12px 0;
+    color: var(--accent-dark);
+}
+
+label { display:block; margin-top:12px; font-weight:600; }
+input, select {
+    width:100%;
+    height:44px;
+    border-radius:10px;
+    border:1.8px solid rgba(155,209,255,0.95);
+    background:white;
+    padding:8px 12px;
+    margin-top:6px;
+}
+
+button {
+    margin-top:18px;
+    width:100%;
+    height:46px;
+    background: linear-gradient(#6be4ff, var(--accent));
+    border-radius:10px;
+    border:none;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.divider {
+    margin:18px 0;
+    height:1px;
+    background:linear-gradient(to right, transparent, #7bcfff, transparent);
+}
+
+.info-cliente {
+    background:#eef7ff;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+.resultados-list {
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-height:360px;
+    overflow-y:auto;
+}
+
+.result-box {
+    background:#ffffff;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #b4dceb;
+    position:relative;
+}
+
+.result-box p { margin:4px 0; }
+
+/* ========= BOTÓN DE ELIMINAR MINI ICONO ========= */
+.btn-delete {
+    position:absolute;
+    right:8px;
+    top:8px;
+    background:#ff4b4b;
+    border:none;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:14px;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:0;
+    line-height:0;
+    transition:0.2s;
+}
+
+.btn-delete:hover {
+    background:#e43e3e;
+    transform:scale(1.1);
+}
+
+.total-general {
+    margin-top:8px;
+    text-align:right;
+    font-weight:800;
+    color:var(--accent-dark);
+}
+
+#snackbar {
+    visibility:hidden;
+    background:#003c6e;
+    color:#fff;
+    border-radius:10px;
+    padding:12px 16px;
+    position:fixed;
+    left:50%;
+    bottom:30px;
+    transform:translateX(-50%);
+    transition:.3s;
+    opacity:0;
+}
+#snackbar.show {
+    visibility:visible;
+    opacity:1;
+    bottom:50px;
+}
