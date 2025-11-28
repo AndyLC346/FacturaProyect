@@ -42,7 +42,7 @@ function calcular() {
 
     let A = importe / cantidad;
     let SIGV = (A * 100) / 118;
-    let IGV = importe - (cantidad * SIGV);
+    //let IGV = importe - (cantidad * SIGV);
 
     totalAcumulado += importe;
     actualizarTotal();
