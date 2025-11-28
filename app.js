@@ -56,9 +56,10 @@ function calcular() {
         <p><strong>Producto:</strong> ${escapeHtml(nombre)}</p>
         <p><strong>Cantidad:</strong> ${cantidad}</p>
         <p><strong>Valor unit SIN IGV:</strong> ${SIGV.toFixed(10)}</p>
-        <p><strong>IGV:</strong> ${IGV.toFixed(10)}</p>
         <p><strong>Total:</strong> ${importe.toFixed(2)}</p>
     `;
+
+    //<p><strong>IGV:</strong> ${IGV.toFixed(10)}</p> muestra el igv si se desea, ponlo en innerHTML
 
     resultadosDiv.appendChild(entry);
     resultadosDiv.scrollTop = resultadosDiv.scrollHeight;
